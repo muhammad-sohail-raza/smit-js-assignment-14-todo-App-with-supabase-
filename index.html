@@ -136,14 +136,8 @@
         Checkbox :checked state strikes through task text via :has() — pure CSS.
       -->
         <ol class="task-list" aria-label="Task list" role="list">
-          <!-- ── Task Card #1 — HIGH (unchecked) ── -->
-          <li class="task-item" role="listitem">
-            <div class="task-inner">
-              <!-- Auto-number badge (CSS counter) -->
-              <div class="task-number" aria-hidden="true"></div>
-
-              <!-- Checkbox: when checked, :has() strikes .task-text -->
-              <input
+          <!-- Checkbox: when checked, :has() strikes .task-text -->
+          <!-- <input
                 class="task-check"
                 type="checkbox"
                 id="task-1"
@@ -161,8 +155,8 @@
                   title="Edit"
                 >
                   ✏️
-                </button>
-                <button
+                </button> -->
+          <!-- <button
                   class="btn-icon btn-delete"
                   type="button"
                   aria-label="Delete task 1"
@@ -171,19 +165,19 @@
                   🗑️
                 </button>
               </div>
-            </div>
-            <!-- /.task-inner -->
+            </div> -->
+          <!-- /.task-inner -->
 
-            <div class="task-separator" aria-hidden="true"></div>
+          <!-- <div class="task-separator" aria-hidden="true"></div>
 
             <div class="task-meta">
               <time class="task-date" datetime="2026-10-18">Due Oct 18</time>
             </div>
-          </li>
+          </li> -->
           <!-- /#1 -->
 
           <!-- ── Task Card #2 — MEDIUM (unchecked) ── -->
-          <li class="task-item" role="listitem">
+          <!-- <li class="task-item" role="listitem">
             <div class="task-inner">
               <div class="task-number" aria-hidden="true"></div>
               <input
@@ -199,9 +193,9 @@
                   class="btn-icon btn-edit"
                   type="button"
                   aria-label="Edit task 2"
-                  title="Edit"
-                >
-                  ✏️
+                  title="Edit" -->
+
+          <!-- 
                 </button>
                 <button
                   class="btn-icon btn-delete"
@@ -209,28 +203,28 @@
                   aria-label="Delete task 2"
                   title="Delete"
                 >
-                  🗑️
+                  
                 </button>
               </div>
             </div>
 
             <div class="task-separator" aria-hidden="true"></div>
 
-            <div class="task-meta">
-              <span class="priority-badge priority-badge--medium"
-                >🟡 Medium</span
-              >
+            <div class="task-meta"> -->
+          <!-- <span class="priority-badge priority-badge--medium"
+                >🟡 Medium</span> -->
+          <!--               
               <time class="task-date" datetime="2026-10-19">Due Oct 19</time>
             </div>
-          </li>
+          </li> -->
           <!-- /#2 -->
 
           <!-- ── Task Card #3 — LOW (COMPLETED — pre-checked) ── -->
-          <li class="task-item" role="listitem">
+          <!-- <li class="task-item" role="listitem">
             <div class="task-inner">
               <div class="task-number" aria-hidden="true"></div>
-              <!-- checked attribute — CSS :has() will auto-strikethrough the label -->
-              <input
+              <!- checked attribute — CSS :has() will auto-strikethrough the label -->
+          <!-- <input
                 class="task-check"
                 type="checkbox"
                 id="task-3"
@@ -244,32 +238,32 @@
                   class="btn-icon btn-edit"
                   type="button"
                   aria-label="Edit task 3"
-                  title="Edit"
-                >
-                  ✏️
+                  title="Edit" >-->
+
+          <!--
                 </button>
                 <button
                   class="btn-icon btn-delete"
                   type="button"
-                  aria-label="Delete task 3"
-                  title="Delete"
-                >
-                  🗑️
-                </button>
+                  aria-label="Delete task 3" -->
+          <!-- title="Delete"
+                🗑 ️️> -->
+
+          <!-- </button>
               </div>
             </div>
 
             <div class="task-separator" aria-hidden="true"></div>
 
-            <div class="task-meta">
-              <span class="priority-badge priority-badge--low">🟢 Low</span>
-              <time class="task-date" datetime="2026-10-17">Done Oct 17 ✓</time>
+            <div class="task-meta"> -->
+          <!-- <span class="priority-badge priority-badge--low">🟢 Low</span> -->
+          <!-- <time class="task-date" datetime="2026-10-17">Done Oct 17 ✓</time>
             </div>
-          </li>
+          </li> -->
           <!-- /#3 -->
 
           <!-- ── Task Card #4 — HIGH (unchecked) ── -->
-          <li class="task-item" role="listitem">
+          <!-- <li class="task-item" role="listitem">
             <div class="task-inner">
               <div class="task-number" aria-hidden="true"></div>
               <input
@@ -287,26 +281,26 @@
                   aria-label="Edit task 4"
                   title="Edit"
                 >
-                  ✏️
+                  
                 </button>
                 <button
                   class="btn-icon btn-delete"
                   type="button"
                   aria-label="Delete task 4"
-                  title="Delete"
-                >
-                  🗑️
+                  title="Delete" -->
+
+          <!-- 
                 </button>
               </div>
             </div>
 
             <div class="task-separator" aria-hidden="true"></div>
 
-            <div class="task-meta">
-              <span class="priority-badge priority-badge--high">🔴 High</span>
-              <time class="task-date" datetime="2026-10-20">Due Oct 20</time>
+            <div class="task-meta"> -->
+          <!-- <span class="priority-badge priority-badge--high">🔴 High</span> -->
+          <!-- <time class="task-date" datetime="2026-10-20">Due Oct 20</time>
             </div>
-          </li>
+          </li> -->
           <!-- /#4 -->
         </ol>
         <!-- /.task-list -->
@@ -331,7 +325,7 @@
       </footer>
     </div>
     <!-- /.page-wrapper -->
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
 </html>
