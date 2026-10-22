@@ -13,13 +13,40 @@ const addtodo = async (event) => {
   let todo = todoinp.value;
 
   await supabaseClient.from("todos").insert({ todo });
+
+  getData();
 };
 
 const getData = async () => {
+  ol.innerHTML = "";
   const response = await supabaseClient.from("todos").select("*");
 
   const todos = response.data;
+  
+  // console.log(todos);
   for (let i = 0; i < todos.length; i++) {
+    const date = new Date(todos[i].created_at);
+
+    const date1 = date.getDate();
+    const month = date.getMonth();
+
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const formattedDate = `${date1} ${months[month]}`;
+
     const taskHTML = `
 <li class="task-item" role="listitem">
   <div class="task-inner">
@@ -30,15 +57,15 @@ const getData = async () => {
     <label class="task-text" for="task-1">${todos[i].todo}</label>
 
     <div class="task-actions">
-      <button class="btn-icon btn-edit" type="button">✏️</button>
-      <button class="btn-icon btn-delete" type="button">🗑️</button>
+      <button class="btn-icon btn-edit" type="button"  onclick="edittodo(${todos[i].id}, '${todos[i].todo}')">✏️</button>
+      <button class="btn-icon btn-delete" type="button" onclick="deletetodo(${todos[i].id})">🗑️</button>
     </div>
   </div>
 
   <div class="task-separator"></div>
 
   <div class="task-meta">
-    <time class="task-date" datetime="2026-10-18">Due Oct 18</time>
+    <time class="task-date" datetime="2026-10-18">${formattedDate}</time>
   </div>
 </li>
 `;
@@ -47,3 +74,34 @@ const getData = async () => {
   }
 };
 getData();
+
+const deletetodo = async (id) => {
+  const response = await supabaseClient.from("todos").delete().eq("id", id);
+  // console.log(response)
+  if (!response.error) {
+    getData();
+  }
+};
+
+const alltodoDelete = async () => {
+  const response = await supabaseClient.from("todos").delete().neq("id", 0);
+
+  getData();
+};
+
+const edittodo = async (id, oldtask) => {
+  const newtask = prompt("Enter new task", oldtask);
+
+  if (newtask === null || newtask.trim() === "") {
+    return;
+  }
+
+  const response = await supabaseClient
+    .from("todos")
+    .update({ todo: newtask.trim() })
+    .eq("id", id);
+
+  if (!response.error) {
+    getData();
+  }
+};
