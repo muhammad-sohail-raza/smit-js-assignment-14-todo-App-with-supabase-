@@ -1016,6 +1016,7 @@ body.light .toggle-track::after {
   }
   .task-inner {
     padding: var(--sp-sm);
+     flex-wrap: wrap;
   }
   .task-number {
     width: 26px;
@@ -1029,6 +1030,7 @@ body.light .toggle-track::after {
   }
   .app-header {
     padding: var(--sp-sm);
+    flex-wrap: wrap;
   }
   .theme-toggle {
     padding: 6px 10px;
@@ -1038,7 +1040,19 @@ body.light .toggle-track::after {
   .theme-toggle span:not(.toggle-icon):not(.toggle-track) {
     display: none;
   }
+
+  .page-wrapper {
+    padding-inline: 0.5rem;
+  }
+  .input-card {
+    padding: var(--sp-sm);
+  }
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
+
 
 /* Tablets — tighter add button */
 @media (min-width: 480px) and (max-width: 767px) {
